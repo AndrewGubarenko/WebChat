@@ -2,6 +2,7 @@ package com.AndriiHubarenko.WebChat.startUpActions;
 
 import com.AndriiHubarenko.WebChat.services.ConnectionService;
 
+import javax.annotation.PostConstruct;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
