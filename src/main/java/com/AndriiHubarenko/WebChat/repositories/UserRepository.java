@@ -64,7 +64,7 @@ public class UserRepository implements CustomCRUDRepository<User, String> {
                 user = new User(Long.parseLong(resultSet.getString("id")), resultSet.getString("nickName"));
             }
             preparedStatement.close();
-            PreparedStatement statement = con.prepareStatement("SELECT TOP 50 * from MESSAGES WHERE user_id=(?)");
+            PreparedStatement statement = con.prepareStatement("SELECT * from MESSAGES WHERE user_id=(?) ORDER BY id DESC LIMIT 50");
             statement.setLong(1, user.getId());
             resultSet = statement.executeQuery();
             while(resultSet.next()) {
