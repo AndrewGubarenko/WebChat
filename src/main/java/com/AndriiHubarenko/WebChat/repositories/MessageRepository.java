@@ -40,12 +40,12 @@ public class MessageRepository implements CustomCRUDRepository<Message, String>{
         List<Message> listResult = new ArrayList<>();
         try (Connection con = connectionService.getConnection();
              Statement statement = con.createStatement()){
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM MESSAGES ORDER BY id DESC");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM MESSAGES ORDER BY id DESC LIMIT 50");
             while(resultSet.next()) {
-                listResult.add(new Message(Long.parseLong(resultSet.getString("id")),
+                listResult.add(new Message(resultSet.getLong("id"),
                         resultSet.getString("message"),
                         resultSet.getString("author"),
-                        Long.parseLong(resultSet.getString("user_id"))));
+                        resultSet.getLong("user_id")));
             }
         }catch (SQLException ex) {
             LOGGER.warn(ex.getMessage());
@@ -62,14 +62,13 @@ public class MessageRepository implements CustomCRUDRepository<Message, String>{
     public Message get(String message) {
         Message foundMessage = null;
         try (Connection con = connectionService.getConnection();
-             PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM MESSAGES WHERE message=(?)")){
-            preparedStatement.setString(1, message);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            Statement statement = con.createStatement()){
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM MESSAGES ORDER BY ID DESC LIMIT 1");
             if(resultSet.next()) {
-                foundMessage = new Message(Long.parseLong(resultSet.getString("id")),
+                foundMessage = new Message(resultSet.getLong("id"),
                         resultSet.getString("message"),
                         resultSet.getString("author"),
-                        Long.parseLong(resultSet.getString("user_id")));
+                        resultSet.getLong("user_id"));
             }
         }catch (SQLException ex) {
             LOGGER.warn(ex.getMessage());

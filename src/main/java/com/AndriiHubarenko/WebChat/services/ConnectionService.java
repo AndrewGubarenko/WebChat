@@ -3,10 +3,10 @@ package com.AndriiHubarenko.WebChat.services;
 import com.AndriiHubarenko.WebChat.repositories.UserRepository;
 import org.apache.log4j.Logger;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Properties;
 
 public class ConnectionService {
@@ -32,6 +32,7 @@ public class ConnectionService {
     }
 
     public Connection getConnection() {
+
         try {
             con = DriverManager.getConnection(url, username, password);
             return con;
