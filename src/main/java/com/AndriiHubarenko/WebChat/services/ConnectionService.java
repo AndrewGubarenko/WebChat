@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class ConnectionService {
 
-    private static final Logger LOGGER = Logger.getLogger(UserRepository.class);
+    private static final Logger LOGGER = Logger.getLogger(ConnectionService.class);
 
     private String url;
     private String username;
