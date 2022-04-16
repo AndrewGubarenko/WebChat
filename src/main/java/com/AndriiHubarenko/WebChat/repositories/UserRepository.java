@@ -4,6 +4,7 @@ import com.AndriiHubarenko.WebChat.domain.Message;
 import com.AndriiHubarenko.WebChat.domain.User;
 import com.AndriiHubarenko.WebChat.repositories.repositories.CustomCRUDRepository;
 import com.AndriiHubarenko.WebChat.services.ConnectionService;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +17,7 @@ import java.sql.SQLException;
 public class UserRepository implements CustomCRUDRepository<User, String> {
 
     private ConnectionService connectionService;
+    private static final Logger LOGGER = Logger.getLogger(UserRepository.class);
 
     public UserRepository () {
         connectionService = new ConnectionService();
@@ -24,73 +26,41 @@ public class UserRepository implements CustomCRUDRepository<User, String> {
 
     @Override
     public boolean create(User user) {
-        Connection con = null;
         boolean result = false;
-        try {
-            con = connectionService.getConnection();
-            PreparedStatement preparedStatement = con.prepareStatement("INSERT into USERS (NickName) VALUES (?)");
+        try (Connection con = connectionService.getConnection();
+             PreparedStatement preparedStatement = con.prepareStatement("INSERT into USERS (NickName) VALUES (?)")){
             preparedStatement.setString(1, user.getNickName());
             result = preparedStatement.executeUpdate() > 0;
-
         } catch (SQLException ex) {
-            ex.printStackTrace();
-            try {
-                con.rollback();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        } finally {
-            try {
-                if (con.isClosed() || con != null) {
-                    con.close();
-                }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            LOGGER.warn(ex.getMessage());
         }
         return result;
     }
 
     @Override
     public User get(String nickName) {
-        Connection con = null;
         User user = null;
-        try {
-            con = connectionService.getConnection();
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT * from USERS WHERE nickname=(?)");
-            preparedStatement.setString(1, nickName);
-            ResultSet resultSet = preparedStatement.executeQuery();
+        try (Connection con = connectionService.getConnection();
+             PreparedStatement statementToGetUser = con.prepareStatement("SELECT * from USERS WHERE nickname=(?)");
+             PreparedStatement statementToGetMessages = con.prepareStatement("SELECT * from MESSAGES WHERE user_id=(?) ORDER BY id DESC LIMIT 50")) {
+            statementToGetUser.setString(1, nickName);
+            ResultSet resultSet = statementToGetUser.executeQuery();
             if(resultSet.next()) {
-                user = new User(Long.parseLong(resultSet.getString("id")), resultSet.getString("nickName"));
-            }
-            preparedStatement.close();
-            PreparedStatement statement = con.prepareStatement("SELECT * from MESSAGES WHERE user_id=(?) ORDER BY id DESC LIMIT 50");
-            statement.setLong(1, user.getId());
-            resultSet = statement.executeQuery();
-            while(resultSet.next()) {
-                user.getMessageList().add(new Message(Long.parseLong(resultSet.getString("id")),
-                        resultSet.getString("message"),
-                        resultSet.getString("author"),
-                        Long.parseLong(resultSet.getString("user_id"))));
-            }
-            statement.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            try {
-                con.rollback();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        } finally {
-            try {
-                if (con.isClosed() || con != null) {
-                    con.close();
+                user = new User(resultSet.getLong("id"), resultSet.getString("nickName"));
+                statementToGetMessages.setLong(1, user.getId());
+                resultSet = statementToGetMessages.executeQuery();
+                while(resultSet.next()) {
+                    user.getMessageList().add(new Message(resultSet.getLong("id"),
+                            resultSet.getString("message"),
+                            resultSet.getString("author"),
+                            resultSet.getLong("user_id")));
                 }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
             }
-            return user;
+
+        } catch (SQLException ex) {
+            LOGGER.warn(ex.getMessage());
         }
+        return user;
     }
 
     /**

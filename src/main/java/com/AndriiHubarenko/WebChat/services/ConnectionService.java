@@ -1,30 +1,44 @@
 package com.AndriiHubarenko.WebChat.services;
 
+import com.AndriiHubarenko.WebChat.repositories.UserRepository;
+import org.apache.log4j.Logger;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.Properties;
 
 public class ConnectionService {
 
-    private static final String url = "jdbc:h2:~/WebChatDB";
-    private static final String driver = "org.h2.Driver";
-    private static final String login = "sa";
-    private static final String password = "";
+    private static final Logger LOGGER = Logger.getLogger(UserRepository.class);
+
+    private String url;
+    private String username;
+    private String password;
+    private Connection con;
 
     public ConnectionService() {
-         try {
-             Class.forName(driver);
-         } catch (ClassNotFoundException e) {
-             e.printStackTrace();
-         }
+        Properties props = new Properties();
+        try (InputStream in = getClass().getResourceAsStream("/database.properties")){
+            props.load(in);
+            url = props.getProperty("jdbc.url");
+            username = props.getProperty("jdbc.username");
+            password = props.getProperty("jdbc.password");
+         Class.forName(props.getProperty("jdbc.driver"));
+        } catch (ClassNotFoundException | IOException e) {
+            LOGGER.warn(e.getMessage());
+        }
     }
 
     public Connection getConnection() {
-        Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url, login, password);
+            con = DriverManager.getConnection(url, username, password);
+            return con;
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.warn(e.getMessage());
         }
-        return conn;
+        return null;
     }
 
 }

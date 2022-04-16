@@ -24,10 +24,8 @@ public class MessageService {
     public Message createMessage(Message message) {
         if(messageRepository.create(message)) {
             return messageRepository.get(message.getMessage());
-        } else {
-            throw new RuntimeException("Unable to add the message.");
         }
-
+        return new Message();
     }
 
     /**

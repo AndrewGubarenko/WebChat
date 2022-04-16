@@ -30,12 +30,9 @@ public class UserService {
             result.add(200);
             result.add(createdUser);
             return result;
-        }
-        if(userRepository.create(user)){
+        } else if(userRepository.create(user)){
             result.add(201);
             result.add(userRepository.get(user.getNickName()));
-        } else {
-            throw new RuntimeException("Something wrong. Unable to create User with such nick name.");
         }
         return result;
     }

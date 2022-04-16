@@ -14,8 +14,4 @@ public class CustomServletContextListener implements ServletContextListener {
         new StartUpActions().createTables();
     }
 
-    @Override
-    public void contextDestroyed(ServletContextEvent contextEvent) {
-        /* May be realized in future */
-    }
 }

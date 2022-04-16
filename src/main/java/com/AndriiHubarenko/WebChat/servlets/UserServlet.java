@@ -17,10 +17,12 @@ import java.util.stream.Collectors;
 
 @WebServlet(name = "UserServlet", value = "/user")
 public class UserServlet extends HttpServlet {
-    UserService service;
 
-    public UserServlet() {
-        service = new UserService();
+    private UserService service;
+
+    @Override
+    public void init() {
+        this.service = new UserService();
     }
 
     @Override
