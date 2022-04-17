@@ -31,7 +31,6 @@ public class ConnectionService {
     }
 
     public Connection getConnection() {
-
         try {
             con = DriverManager.getConnection(url, username, password);
             return con;

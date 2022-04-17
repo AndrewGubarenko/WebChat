@@ -25,7 +25,8 @@ public class MessageRepository implements CustomCRUDRepository<Message, String> 
     public boolean create(Message message) {
         boolean result = false;
         try (Connection con = connectionService.getConnection();
-             PreparedStatement preparedStatement = con.prepareStatement("INSERT into MESSAGES (message, author, user_id) VALUES (?,?,?)")){
+             PreparedStatement preparedStatement = con.prepareStatement("INSERT into MESSAGES (message, author, user_id) " +
+                                                                            "VALUES (?,?,?)")){
             preparedStatement.setString(1, message.getMessage());
             preparedStatement.setString(2, message.getAuthor());
             preparedStatement.setLong(3, message.getUser_id());
@@ -40,7 +41,10 @@ public class MessageRepository implements CustomCRUDRepository<Message, String> 
         List<Message> listResult = new ArrayList<>();
         try (Connection con = connectionService.getConnection();
              Statement statement = con.createStatement()){
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM MESSAGES ORDER BY id DESC LIMIT 50");
+            ResultSet resultSet = statement.executeQuery("SELECT * " +
+                                                             "FROM MESSAGES " +
+                                                             "ORDER BY id DESC " +
+                                                             "LIMIT 50");
             while(resultSet.next()) {
                 listResult.add(new Message(resultSet.getLong("id"),
                         resultSet.getString("message"),
@@ -63,7 +67,10 @@ public class MessageRepository implements CustomCRUDRepository<Message, String> 
         Message foundMessage = null;
         try (Connection con = connectionService.getConnection();
             Statement statement = con.createStatement()){
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM MESSAGES ORDER BY ID DESC LIMIT 1");
+            ResultSet resultSet = statement.executeQuery("SELECT * " +
+                                                             "FROM MESSAGES " +
+                                                             "ORDER BY ID DESC " +
+                                                             "LIMIT 1");
             if(resultSet.next()) {
                 foundMessage = new Message(resultSet.getLong("id"),
                         resultSet.getString("message"),

@@ -6,10 +6,7 @@ import com.andrii.hubarenko.webchat.repositories.repositories.CustomCRUDReposito
 import com.andrii.hubarenko.webchat.services.ConnectionService;
 import org.apache.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * @author Andrii Hubarenko
@@ -41,14 +38,18 @@ public class UserRepository implements CustomCRUDRepository<User, String> {
     public User get(String nickName) {
         User user = null;
         try (Connection con = connectionService.getConnection();
-             PreparedStatement statementToGetUser = con.prepareStatement("SELECT * from USERS WHERE nickname=(?)");
-             PreparedStatement statementToGetMessages = con.prepareStatement("SELECT * from MESSAGES WHERE user_id=(?) ORDER BY id DESC LIMIT 50")) {
+             PreparedStatement statementToGetUser = con.prepareStatement("SELECT * " +
+                                                                             "from USERS " +
+                                                                             "WHERE nickname=(?)");
+             Statement statementToGetMessages = con.createStatement()) {
             statementToGetUser.setString(1, nickName);
             ResultSet resultSet = statementToGetUser.executeQuery();
             if(resultSet.next()) {
                 user = new User(resultSet.getLong("id"), resultSet.getString("nickName"));
-                statementToGetMessages.setLong(1, user.getId());
-                resultSet = statementToGetMessages.executeQuery();
+                resultSet = statementToGetMessages.executeQuery("SELECT * " +
+                                                                    "from MESSAGES " +
+                                                                    "ORDER BY id DESC " +
+                                                                    "LIMIT 50");
                 while(resultSet.next()) {
                     user.getMessageList().add(new Message(resultSet.getLong("id"),
                             resultSet.getString("message"),

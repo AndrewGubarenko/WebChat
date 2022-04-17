@@ -1,0 +1,323 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"ma",
+				"maxNum"
+			],
+			[
+				"e",
+				"email"
+			],
+			[
+				"in",
+				"input\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/TagService.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/TodoService.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/domain/Tag.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/domain/Todo.java",
+		"/C/Users/Andrew/Desktop/WebChat/pom.xml",
+		"/I/Alyona.Polinovskaya/PinkUnicorn/pom.xml",
+		"/C/Users/Andrew/Desktop/test.js",
+		"/C/Windows/Temp/Rar$DIa18604.44141/FileDAO.java",
+		"/C/Windows/Temp/Rar$DIa18604.40981/FileDaoProxy.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/aspect/AuthenticationAspect.java",
+		"/C/Windows/Temp/Rar$DIa41216.46615/GarageServiceImpl.java",
+		"/C/Windows/Temp/Rar$DIa41216.46161/GarageService.java",
+		"/C/Program Files/JetBrains/WebStorm 2020.2.3/bin/log.xml",
+		"/C/Windows/Temp/Rar$DIa41216.41308/Controller.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/aspect/Authenticational.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/security/TokenManager.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/RepresentationService.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/ServiceValidationException.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/ServiceAuthorizationException.java",
+		"/C/Projects/airnavigation.tradeunion/pom.xml",
+		"/C/Projects/ITVDN/Паттерны проектирования в Java/003_Factory_Method/003_Samples/src/factorymethod/DrinkMachine.java",
+		"/C/Windows/Temp/Rar$DIa12556.39391/PausedGame.java",
+		"/C/Windows/Temp/Rar$DIa12556.37466/GameControl.java",
+		"/C/Windows/Temp/Rar$DIa12556.42926/StartedGame.java",
+		"/C/Windows/Temp/Rar$DIa13568.12082/ProxyDemo.java",
+		"/C/Users/Andrew/Desktop/Recover/Фотка-0176.jpg",
+		"/C/Windows/Temp/Rar$DIa42316.43672/Check.java",
+		"/C/Windows/Temp/Rar$DIa42316.47273/MultitonDemo.java",
+		"/C/Windows/Temp/Rar$DIa42316.31763/Singleton.java",
+		"/C/Windows/Temp/Rar$DIa42316.32739/SingletonDemo.java",
+		"/C/Windows/Temp/Rar$DIa33676.5958/Singleton.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/domain/PriorityType.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/repositories/TagRepository.java",
+		"/C/Windows/Temp/Rar$DIa42316.44057/Level.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/UserRest.java",
+		"/C/Projects/ITVDN/DesignPatterns/009_composite/src/Demo.java",
+		"/C/Windows/Temp/Rar$DIa23308.20963/Singleton.java",
+		"/C/Windows/Temp/Rar$DIa10012.3990/Person.java",
+		"/C/Windows/Temp/Rar$DIa40932.33983/SingletonDemo.java",
+		"/C/Windows/Temp/Rar$DIa40932.27469/EnumSingletonDemo.java",
+		"/C/Windows/Temp/Rar$DIa40932.21407/EnumSingleton.java",
+		"/C/Windows/Temp/Rar$DIa40932.17312/Check.java",
+		"/C/Windows/Temp/Rar$DIa40932.16282/MultitonDemo.java",
+		"/C/Windows/Temp/Rar$DIa40932.15676/Level.java",
+		"/C/Windows/Temp/Rar$DIa40932.28731/Singleton.java",
+		"/C/Windows/Temp/Rar$DIa10352.6807/Device.java",
+		"/C/Windows/Temp/Rar$DIa10352.4878/Demo.java",
+		"/C/Windows/Temp/Rar$DIa10352.17007/File.java",
+		"/C/Windows/Temp/Rar$DIa10352.20415/File.java",
+		"/C/Windows/Temp/Rar$DIa10352.3354/Device.java",
+		"/C/Windows/Temp/Rar$DIa10352.47371/Codec.java",
+		"/C/Windows/Temp/Rar$DIa10352.41020/Address.java",
+		"/C/Windows/Temp/Rar$DIa10352.18878/Demo.java",
+		"/C/Windows/Temp/Rar$DIa10352.18803/Demo.java",
+		"/C/Projects/ITVDN/DesignPatterns/003_Factory_Method/src/factorymethod/DrinkMachine.java",
+		"/D/Проекты/резерв/frontend/src/components/questionnaire.js",
+		"/C/Windows/Temp/Rar$DIa10012.9092/Codec.java",
+		"/C/Windows/Temp/Rar$DIa10012.10173/Device.java",
+		"/C/Windows/Temp/Rar$DIa10012.14071/File.java",
+		"/C/Windows/Temp/Rar$DIa10352.41848/Person.java",
+		"/C/Windows/Temp/Rar$DIa10352.42463/Person.java",
+		"/C/Windows/Temp/Rar$DIa10352.46571/Demo.java",
+		"/C/Windows/Temp/Rar$DIa10352.46132/Address.java",
+		"/C/Windows/Temp/Rar$DIa10012.12113/Demo.java",
+		"/C/Windows/Temp/Rar$DIa10012.6830/Address.java",
+		"/D/Проекты/резерв/frontend/src/containers/questionnaire_container.js",
+		"/C/Windows/Temp/Rar$DIa145220.28112/Demo.java",
+		"/C/Windows/Temp/Rar$DIa140672.3502/SimpleButtonFactory.java",
+		"/C/Windows/Temp/Rar$DIa139888.48139/StaticButton.java",
+		"/C/Windows/Temp/Rar$DIa143288.40826/EventProducer.java",
+		"/C/Windows/Temp/Rar$DIa141648.11941/Demo.java",
+		"/C/Windows/Temp/Rar$DIa138232.35560/StaticButton.java",
+		"/C/Windows/Temp/Rar$DIa138232.34039/Demo.java",
+		"/C/Projects/ITVDN/Паттерны проектирования в Java/003_Factory_Method/003_Samples/src/factorymethod/factory/Demo.java",
+		"/C/Tomcat 9.0/conf/tomcat-users.xml",
+		"/D/резерв/airnavigation.tradeunion/pom.xml",
+		"/C/Tomcat 9.0/conf/context.xml",
+		"/C/Tomcat 9.0/webapps/manager/WEB-INF/web.xml",
+		"/C/Tomcat 9.0/webapps/ROOT/WEB-INF/web.xml",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/containers/AuthenticationContainer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/containers/RepresentationEditorContainer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/App.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/services/UserService.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/services/TodoService.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/containers/TodoTreeContainer.js",
+		"/C/Windows/Temp/Rar$DIa19300.8958/browserconfig.xml",
+		"/C/Windows/Temp/Rar$DIa19300.9656/manifest.json",
+		"/C/Tomcat 9.0/conf/server.xml",
+		"/C/Tomcat 9.0/conf/tomcat-users.xsd",
+		"/C/Tomcat 9.0/conf/web.xml",
+		"/C/Windows/Temp/Rar$DIa27488.4242/manifest.json",
+		"/D/BackUp/airnavigation.tradeunion/FrontEnd/air-navigation/src/reducers/mainReducer.js",
+		"/C/Users/Andrew/Desktop/AdminPage.html",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/representation/Actions.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/representation/Reducer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/todo/Actions.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/MainReducer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/user/Reducer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/user/Actions.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/services/RepresentationService.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/appContext/Context.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/components/RepresentationList.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/server/todo/Reducer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/ui/todoTree/Actions.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/index.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/components/Todo.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/components/TodoTree.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/components/Registration.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/containers/RegistrationContainer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/containers/NavigationBarContainer.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/react/todo-tree/src/store/ui/representationEditor/Actions.js",
+		"/C/Projects/ITVDN/Spring Security Fundamentals (Разработка приложений с примененеием элементов Spring Security)/DeliciousFoodDelivery/pom.xml",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/TodoRest.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/RepresentationRest.java",
+		"/C/wamp64/www/build/service-worker.js",
+		"/C/Projects/Alyona.Polinovskaya/PinkUnicorn/pink_unicorn_view/node_modules/react-elastic-carousel/dist/index.js",
+		"/C/Users/Andrew/Documents/ax_files.xml",
+		"/C/wamp64/www/build/precache-manifest.31183b2eb7b4a461113496dfbbde51a0.js",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/domain/Representation.java",
+		"/C/Projects/Alyona.Polinovskaya/PinkUnicorn/pink_unicorn_view/node_modules/react-elastic-carousel/dist/index.es.js",
+		"/D/Проекты/TODO application/TodoApplication/pom.xml",
+		"/C/Users/Andrew/Desktop/test.html",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/service/UserService.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/webapp/WEB-INF/web.xml",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/resources/aaandrey/todotree/appconfig/main.xml",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/rest/utils/AuthenticationUtils.java",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/pom.xml",
+		"/D/ToDoTree/ToDoTree-master/ToDoTree-master/src/main/java/aaandrey/todotree/security/TokenPayload.java"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"history"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

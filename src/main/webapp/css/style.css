@@ -1,0 +1,68 @@
+{box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 340px;
+    padding: 10px;
+    background-color: grey;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    max-height: 40px;
+
+}
+
+.form-container input {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    max-height: 20px;
+}
+
+.form-container #messageWindow {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: 1px solid black;
+    background: #f1f1f1;
+    resize: none;
+    mix-height: 200px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+#messagesDiv {
+    display: none;
+}
+
+#nicknameDiv {
+    display: block;
+}
+
+
+
+
