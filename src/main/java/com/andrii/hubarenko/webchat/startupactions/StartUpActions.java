@@ -1,7 +1,6 @@
-package com.AndriiHubarenko.WebChat.startUpActions;
+package com.andrii.hubarenko.webchat.startupactions;
 
-import com.AndriiHubarenko.WebChat.repositories.UserRepository;
-import com.AndriiHubarenko.WebChat.services.ConnectionService;
+import com.andrii.hubarenko.webchat.services.ConnectionService;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;

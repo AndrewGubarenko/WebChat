@@ -1,8 +1,8 @@
-package com.AndriiHubarenko.WebChat.repositories;
+package com.andrii.hubarenko.webchat.repositories;
 
-import com.AndriiHubarenko.WebChat.domain.Message;
-import com.AndriiHubarenko.WebChat.repositories.repositories.CustomCRUDRepository;
-import com.AndriiHubarenko.WebChat.services.ConnectionService;
+import com.andrii.hubarenko.webchat.domain.Message;
+import com.andrii.hubarenko.webchat.repositories.repositories.CustomCRUDRepository;
+import com.andrii.hubarenko.webchat.services.ConnectionService;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Andrii Hubarenko
  */
-public class MessageRepository implements CustomCRUDRepository<Message, String>{
+public class MessageRepository implements CustomCRUDRepository<Message, String> {
 
     private ConnectionService connectionService;
     private static final Logger LOGGER = Logger.getLogger(MessageRepository.class);

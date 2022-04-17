@@ -1,7 +1,7 @@
-package com.AndriiHubarenko.WebChat.services;
+package com.andrii.hubarenko.webchat.services;
 
-import com.AndriiHubarenko.WebChat.domain.Message;
-import com.AndriiHubarenko.WebChat.repositories.MessageRepository;
+import com.andrii.hubarenko.webchat.domain.Message;
+import com.andrii.hubarenko.webchat.repositories.MessageRepository;
 
 import java.util.List;
 

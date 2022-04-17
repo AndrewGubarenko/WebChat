@@ -1,8 +1,8 @@
-package com.AndriiHubarenko.WebChat.services;
+package com.andrii.hubarenko.webchat.services;
 
-import com.AndriiHubarenko.WebChat.domain.User;
-import com.AndriiHubarenko.WebChat.repositories.UserRepository;
-import com.AndriiHubarenko.WebChat.repositories.repositories.CustomCRUDRepository;
+import com.andrii.hubarenko.webchat.domain.User;
+import com.andrii.hubarenko.webchat.repositories.UserRepository;
+import com.andrii.hubarenko.webchat.repositories.repositories.CustomCRUDRepository;
 
 import java.util.ArrayList;
 import java.util.List;

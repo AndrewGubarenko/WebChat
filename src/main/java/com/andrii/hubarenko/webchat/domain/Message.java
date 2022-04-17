@@ -1,4 +1,4 @@
-package com.AndriiHubarenko.WebChat.domain;
+package com.andrii.hubarenko.webchat.domain;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 

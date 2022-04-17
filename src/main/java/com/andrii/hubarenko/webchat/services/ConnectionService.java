@@ -1,6 +1,5 @@
-package com.AndriiHubarenko.WebChat.services;
+package com.andrii.hubarenko.webchat.services;
 
-import com.AndriiHubarenko.WebChat.repositories.UserRepository;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;

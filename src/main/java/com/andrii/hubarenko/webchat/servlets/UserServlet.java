@@ -1,17 +1,13 @@
-package com.AndriiHubarenko.WebChat.servlets;
+package com.andrii.hubarenko.webchat.servlets;
 
-import com.AndriiHubarenko.WebChat.domain.User;
-import com.AndriiHubarenko.WebChat.repositories.UserRepository;
-import com.AndriiHubarenko.WebChat.services.ConnectionService;
-import com.AndriiHubarenko.WebChat.services.UserService;
+import com.andrii.hubarenko.webchat.domain.User;
+import com.andrii.hubarenko.webchat.services.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.stream.Collectors;
 

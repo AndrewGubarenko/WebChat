@@ -1,4 +1,4 @@
-package com.AndriiHubarenko.WebChat.repositories.repositories;
+package com.andrii.hubarenko.webchat.repositories.repositories;
 
 /**
  * @author Andrii Hubarenko

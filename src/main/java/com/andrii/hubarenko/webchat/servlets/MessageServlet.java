@@ -1,8 +1,7 @@
-package com.AndriiHubarenko.WebChat.servlets;
+package com.andrii.hubarenko.webchat.servlets;
 
-import com.AndriiHubarenko.WebChat.domain.Message;
-import com.AndriiHubarenko.WebChat.services.MessageService;
-import com.AndriiHubarenko.WebChat.services.UserService;
+import com.andrii.hubarenko.webchat.domain.Message;
+import com.andrii.hubarenko.webchat.services.MessageService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletException;

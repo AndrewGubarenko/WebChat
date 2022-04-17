@@ -1,6 +1,6 @@
-package com.AndriiHubarenko.WebChat.servlets;
+package com.andrii.hubarenko.webchat.servlets;
 
-import com.AndriiHubarenko.WebChat.startUpActions.StartUpActions;
+import com.andrii.hubarenko.webchat.startupactions.StartUpActions;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
