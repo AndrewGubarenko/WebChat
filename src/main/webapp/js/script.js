@@ -4,25 +4,31 @@ let user = null;
 let messages = new Array();
 
 socket.onopen = function (event) {
-    if (event.data === undefined) {
-        document.getElementById('nickname').placeholder = "Enter login";
+    socket.send("connecting...")
+    if (event.data) {
+        document.getElementById("nickname").placeholder = event.data;
     } else {
-        document.getElementById('nickname').placeholder = event.data;
+        document.getElementById("nickname").placeholder = "Enter login";
     }
 
 };
 socket.onclose = function (event) {
-
+    if (event.wasClean) {
+        alert("Connection close");
+    } else {
+        alert("connection breakdown");
+    }
+    alert("Status: " + event.code + " reason: " + event.reason);
 };
 
 socket.onmessage = function (event) {
 
     if(isAuthenticated) {
-        document.getElementById('nicknameDiv').style.display = "none";
-        document.getElementById('messagesDiv').style.display = "block";
+        document.getElementById("nicknameDiv").style.display = "none";
+        document.getElementById("messagesDiv").style.display = "block";
     } else {
-        document.getElementById('nicknameDiv').style.display = "block";
-        document.getElementById('messagesDiv').style.display = "none";
+        document.getElementById("nicknameDiv").style.display = "block";
+        document.getElementById("messagesDiv").style.display = "none";
     }
 
     if(event.data.includes("nickName")) {
@@ -59,16 +65,12 @@ socket.onmessage = function (event) {
     }
 };
 
-/*socket.addEventListener('message', (event) => {
-    socket.onSendMessage();
-});*/
-
-socket.onerror = function(evt) {
-    document.getElementById("errorRow").innerHTML = '<span style="color: #ff0000;">ERROR:</span> ' + evt.data;
+socket.onerror = function(event) {
+    document.getElementById("errorRow").innerHTML = '<span style="color: #ff0000;">ERROR:</span> ' + event.data;
 };
 
 socket.onLogin = function () {
-    let nickname = document.getElementById('nickname').value;
+    let nickname = document.getElementById("nickname").value;
     let json = {
         nickName: nickname
     };
@@ -77,13 +79,13 @@ socket.onLogin = function () {
 };
 
 socket.onSendMessage = function () {
-    let message = document.getElementById('messages').value;
+    let message = document.getElementById("messages").value;
     let json = {
         message: message,
         author: user.nickName,
         user_id: user.id
     };
-    document.getElementById('messages').value = "";
+    document.getElementById("messages").value = "";
     socket.send(JSON.stringify(json));
 };
 

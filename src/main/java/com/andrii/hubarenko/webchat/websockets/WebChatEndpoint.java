@@ -11,7 +11,9 @@ import org.apache.log4j.Logger;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @ServerEndpoint("/socket")
 public class WebChatEndpoint {
@@ -20,8 +22,13 @@ public class WebChatEndpoint {
     private UserService userService = new UserService();
     private MessageService messageService = new MessageService();
 
+    private static final Set<WebChatEndpoint> connections = new HashSet<>();
+    private Session session;
+
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) throws IOException {
+        this.session = session;
+        connections.add(this);
         session.getBasicRemote().sendText("Enter your nick name: " );
     }
 
@@ -36,7 +43,10 @@ public class WebChatEndpoint {
             ObjectMapper mapper = new ObjectMapper();
             Message mes = mapper.readValue(message, Message.class);
             Message result = messageService.createMessage(mes);
-            session.getBasicRemote().sendText(mapper.writeValueAsString(result));
+
+            for(WebChatEndpoint client: connections)
+                client.session.getBasicRemote().sendText(mapper.writeValueAsString(result));
+
         } else if(message.contains("refresh")) {
             ObjectMapper mapper = new ObjectMapper();
             List<Message> result = messageService.getAllMessages();
